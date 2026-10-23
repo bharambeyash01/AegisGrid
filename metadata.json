@@ -1,0 +1,6 @@
+{
+  "name": "AegisGrid Resilience Intelligence",
+  "description": "Agentic AI operational command center for clean-energy grid and industrial supply chain resilience, featuring multimodal visual inspection, live web search grounding, multi-agent causal reasoning, and executive audio briefings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

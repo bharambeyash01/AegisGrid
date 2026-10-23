@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #090d16;
+    color: #f8fafc;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes criticalGlowPulse {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px rgba(244, 63, 94, 0.45));
+  }
+  50% {
+    opacity: 0.86;
+    filter: drop-shadow(0 0 12px rgba(244, 63, 94, 0.92));
+  }
+}
+
+@keyframes criticalHaloExpand {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.65);
+    opacity: 0.14;
+  }
+}
+
+.critical-status-glow {
+  animation: criticalGlowPulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.critical-halo-ring {
+  animation: criticalHaloExpand 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .critical-status-glow,
+  .critical-halo-ring {
+    animation: none;
+  }
+}
+
